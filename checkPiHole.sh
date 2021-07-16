@@ -1,5 +1,5 @@
 #!/bin/bash
-TEXT=`/usr/bin/docker exec -t pihole pihole -v`
+TEXT=$(/usr/bin/docker exec -t pihole pihole -v)
 VERSIONS=$(echo $TEXT | awk '{gsub(/v|)\r/,""); print "dpkg --compare-versions "$4" lt "$6}')
 UPDATE=N
 
